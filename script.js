@@ -1,6 +1,7 @@
 const gameBoard = document.querySelector("#game-board");
 const context = gameBoard.getContext("2d");
 const scoreBoard = document.querySelector("#score-board");
+const highScoreBoard = document.querySelector("#high-score-board");
 const resetBtn = document.querySelector("#reset-button");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
@@ -15,6 +16,7 @@ let yVelocity = 0;
 let foodX;
 let foodY;
 let score = 0;
+let highScore = 0;
 let snake = [
 	{ x: unitSize * 4, y: 0 },
 	{ x: unitSize * 3, y: 0 },
@@ -128,19 +130,31 @@ function checkGameOver() {
 			break;
 		//case 2: when snake hits right border
 		case snake[0].x >= gameWidth:
+			/* 			if (score > highScore) {
+				highScoreBoard.textContent = score;
+			} */
 			running = false;
 			break;
 		//case 3: when snake hits top border
 		case snake[0].y < 0:
+			/* if (score > highScore) {
+				highScoreBoard.textContent = score;
+			} */
 			running = false;
 			break;
 		//case 4: when snake hits bottom border
 		case snake[0].y >= gameHeight:
+			/* if (score > highScore) {
+				highScoreBoard.textContent = score;
+			} */
 			running = false;
 			break;
 	}
 	for (let i = 1; i < snake.length; i += 1) {
 		if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) {
+			/* if (score > highScore) {
+				highScoreBoard.textContent = score;
+			} */
 			running = false;
 		}
 	}
@@ -155,6 +169,11 @@ function displayGameOver() {
 	running = false;
 }
 function resetGame() {
+	if (score > highScore) {
+		highScore = score;
+		highScoreBoard.textContent = highScore;
+	}
+
 	score = 0;
 	xVelocity = unitSize;
 	yVelocity = 0;
