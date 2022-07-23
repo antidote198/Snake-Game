@@ -7,7 +7,7 @@ const gameHeight = gameBoard.height;
 const boardBackground = "white";
 const snakeColor = "lightgreen";
 const snakeBorder = "black";
-const foodsnake = "red";
+const foodColor = "red";
 const unitSize = 25;
 let running = false;
 let xVelocity = unitSize;
@@ -28,6 +28,7 @@ resetBtn.addEventListener("click", resetGame);
 
 gameStart();
 createFood();
+drawFood();
 
 function gameStart() {}
 function nextTick() {}
@@ -41,7 +42,10 @@ function createFood() {
 	foodX = randomFood(0, gameWidth - unitSize);
 	foodY = randomFood(0, gameWidth - unitSize);
 }
-function drawFood() {}
+function drawFood() {
+	context.fillStyle = foodColor;
+	context.fillRect(foodX, foodY, unitSize, unitSize);
+}
 function moveSnake() {}
 function drawSnake() {}
 function changeDirection() {}
