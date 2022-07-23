@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+#container {
+	text-align: center;
+}
+#game-board {
+	border: 3px solid;
+}
+#score-board {
+	font-family: "Source Code Pro", monospace;
+	font-size: 50px;
+}
+#reset-button {
+	padding: 5px;
+	border: 2px solid;
+	border-radius: 5%;
+	font-size: 20px;
+	cursor: pointer;
+}
