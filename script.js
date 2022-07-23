@@ -145,5 +145,11 @@ function checkGameOver() {
 		}
 	}
 }
-function displayGameOver() {}
+function displayGameOver() {
+	context.font = "50px MV Boli";
+	context.fillStyle = "black";
+	context.textAlign = "center";
+	context.fillText("GAME OVER!", gameWidth / 2, gameHeight / 2);
+	running = false;
+}
 function resetGame() {}
