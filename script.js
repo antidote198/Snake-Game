@@ -27,10 +27,14 @@ window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
 
 gameStart();
-createFood();
-drawFood();
 
-function gameStart() {}
+function gameStart() {
+	running = true;
+	scoreBoard.textContent = score;
+	createFood();
+	drawFood();
+	nextTick();
+}
 function nextTick() {}
 function clearBoard() {}
 function createFood() {
