@@ -49,7 +49,10 @@ function nextTick() {
 		displayGameOver();
 	}
 }
-function clearBoard() {}
+function clearBoard() {
+	context.fillStyle = boardBackground;
+	context.fillRect(0, 0, gameWidth, gameHeight);
+}
 function createFood() {
 	function randomFood(min, max) {
 		const randNum =
